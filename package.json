@@ -1,0 +1,45 @@
+{
+  "name": "file-renamer",
+  "version": "0.2.0",
+  "description": "Rinomina massiva di file: regole componibili, Nome libero, numerazione sequenziale con cifre automatiche, estensione intoccabile, anteprima, undo. Cross-platform (macOS, Windows, Linux).",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "renamer": "dist/cli/main.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "presets",
+    "docs",
+    "README.md"
+  ],
+  "scripts": {
+    "clean": "node scripts/clean.mjs dist .test-build",
+    "build": "node scripts/clean.mjs dist && tsc -p tsconfig.build.json && tsc -p tsconfig.client.json && node scripts/copy-assets.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.client.json --noEmit",
+    "pretest": "node scripts/clean.mjs .test-build && tsc -p tsconfig.json --outDir .test-build --declaration false --sourceMap false",
+    "test": "node --test \".test-build/tests/**/*.test.js\"",
+    "check": "npm run typecheck && npm test && npm run build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "start": "node dist/cli/main.js",
+    "ui": "node dist/cli/main.js ui"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.8.0"
+  }
+}
