@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "mode": "rules",
+  "rules": [
+    { "type": "replace", "find": "IMG_", "with": "Vacanza_" },
+    { "type": "removeChars", "brackets": true },
+    { "type": "accents" },
+    { "type": "case", "mode": "lower" },
+    { "type": "separators", "spaces": "underscore", "collapse": true, "trim": true }
+  ],
+  "sequence": {
+    "start": 1,
+    "step": 1,
+    "digits": "auto",
+    "delimiter": "_",
+    "scope": "perFolder",
+    "orderBy": "modified",
+    "reverse": false
+  },
+  "filters": {
+    "extensions": ["jpg", "jpeg", "png"],
+    "recursive": true,
+    "includeHidden": false
+  }
+}

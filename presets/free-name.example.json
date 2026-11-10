@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "mode": "free",
+  "free": {
+    "name": "NomeFileCustom",
+    "delimiter": "_",
+    "start": 1,
+    "step": 1,
+    "digits": "auto",
+    "scope": "global",
+    "orderBy": "name",
+    "reverse": false
+  },
+  "filters": {
+    "extensions": [],
+    "recursive": false,
+    "includeHidden": false
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "mode": "rules",
+  "rules": [
+    { "type": "date", "source": "exif", "format": "YYYY-MM-DD", "position": "prefix", "separator": "_" },
+    { "type": "separators", "spaces": "underscore", "collapse": true }
+  ],
+  "sequence": { "start": 1, "digits": "auto", "delimiter": "_", "orderBy": "exif" },
+  "filters": { "extensions": ["jpg", "jpeg"] }
+}
